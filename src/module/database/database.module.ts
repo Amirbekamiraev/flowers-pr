@@ -3,6 +3,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { UserEntity } from './entities/user.entity';
 import { RoleEntity } from './entities/role.entity';
 import { FlowerEntity } from './entities/flower.entity';
+import { CartEntity } from './entities/cart.entity';
 
 @Module({
   imports: [
@@ -18,7 +19,7 @@ import { FlowerEntity } from './entities/flower.entity';
       ssl: {
         rejectUnauthorized: false,
       },
-      entities: [UserEntity, RoleEntity, FlowerEntity],
+      entities: [UserEntity, RoleEntity, FlowerEntity, CartEntity],
       synchronize: true,
       logging: true,
     }),

@@ -6,6 +6,7 @@ import {
   PrimaryGeneratedColumn,
 } from 'typeorm';
 import { RoleEntity } from './role.entity';
+import { CartEntity } from './cart.entity';
 
 @Entity('users')
 export class UserEntity {
@@ -26,4 +27,7 @@ export class UserEntity {
 
   @ManyToMany(() => RoleEntity, (role) => role.users)
   role: RoleEntity[];
+
+  @OneToMany(() => CartEntity, (item) => item.user)
+  cart: CartEntity[];
 }
